@@ -27,7 +27,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         // dd($Category);
         $category->save();
-        return view('posts.create', ['categories' => $category]);
+        return redirect()->route('categories.index');
     }
 
     public function edit(Category $category)
@@ -43,12 +43,12 @@ class CategoryController extends Controller
         $category->name = $request->name;
         //  dd($category);
         $category->save();
-        return "Updated Successfully";
+        return redirect()->route('categories.index');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
-        return "Deleted Successfully";
+        return back()->with('delete', 'Deleted Successfully');
     }
 }

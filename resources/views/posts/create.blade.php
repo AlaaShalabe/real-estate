@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin-app')
 @section('title', 'Welcome')
 @section('subtitle', 'Welcome')
 @section('content')
@@ -18,7 +18,7 @@
             <div class="field">
                 <label class="label">Area </label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" placeholder="200m" name="area">
+                    <input class="input" type="number" placeholder="200m" name="area">
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
@@ -31,15 +31,15 @@
                 </div>
             </div>
             <div class="field">
-                <label class="label">Sale/Bay..</label>
+                <label class="label">Sale/Buy..</label>
                 <div class="control">
                     <label class="radio">
                         <input type="radio" name="reason" value="sale">
                         Sale
                     </label>
                     <label class="radio">
-                        <input type="radio" name="reason" value="bay">
-                        Bay
+                        <input type="radio" name="reason" value="buy">
+                        Buy
                     </label>
                 </div>
 
@@ -88,19 +88,22 @@
                 </div>
             </div>
             <div class="field">
-                <label class="label">Image</label>
+                <label class="label">Photo</label>
                 <div class="file">
-                    <label class="file-label">
+                    <input class="input" name="photo" value=" {{ old('photo') }}" type="text"
+                        placeholder="Text input">
+                    {{-- <label class="file-label">
                         <input class="file-input" type="file" name="photo">
                         <span class="file-cta">
                             <span class="file-icon">
                                 <i class="fas fa-upload"></i>
                             </span>
                             <span class="file-label">
-                                Choose a file…
+                                {{ __('Choose a file…') }}
                             </span>
                         </span>
-                    </label>
+                        </span>
+                    </label> --}}
                     @error('photo')
                         <div class="help is-danger">{{ $message }}</div>
                     @enderror

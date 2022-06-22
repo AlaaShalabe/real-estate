@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $primaryKey = "uniqueId";
-    public $incrementing = false;
 
     public function category()
     {
@@ -17,6 +15,6 @@ class Post extends Model
     }
     public function user()
     {
-        return $this->belongsTo(User::class, "uniqueId", "user_id");
+        return $this->belongsTo(User::class);
     }
 }

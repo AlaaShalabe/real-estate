@@ -17,8 +17,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $primaryKey = "uniqueId";
-    public $incrementing = false;
+
+
     protected $fillable = [
         'name',
         'email',
@@ -45,6 +45,6 @@ class User extends Authenticatable
     ];
     public function posts()
     {
-        return $this->hasMany(Post::class, "user_id", "uniqueId");
+        return $this->hasMany(Post::class);
     }
 }

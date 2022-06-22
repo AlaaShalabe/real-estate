@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('title', 'Login')
 @section('subtitle', 'Welcome Admin')
-{{-- @section('hero-classes', 'is-info') --}}
 
 @section('content')
     <section class="section">
