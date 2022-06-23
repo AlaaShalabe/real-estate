@@ -45,7 +45,10 @@ class CategoryController extends Controller
         $category->save();
         return redirect()->route('categories.index');
     }
-
+    public function show(Category $category)
+    {
+        return view('categories.show', ['category' => $category]);
+    }
     public function destroy(Category $category)
     {
         $category->delete();

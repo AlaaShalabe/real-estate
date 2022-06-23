@@ -25,7 +25,9 @@
 
                                 <div class="content">
                                     {{ $post->content }} <a>@bulmaio</a>.
-                                    <a href="#">{{ $post->category->name }}</a> <a href="#">#responsive</a>
+                                    <a
+                                        href="{{ route('categories.show', $post->category) }}">{{ $post->category->name }}</a>
+                                    <a href="#">#responsive</a>
                                     <br>
                                     <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
                                 </div>
