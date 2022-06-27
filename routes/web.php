@@ -25,7 +25,7 @@ Route::prefix('users')->group(function () {
     // Route::post('/store', [LoginController::class, 'store'])->name('auth.store');
     Route::get('/login', [AuthController::class, 'show']);
     Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.login');
-    Route::post('/logou', [AuthController::class, 'logout'])->name('auth.logout');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
 Route::prefix('posts')->group(function () {
     Route::get('/index', [PostController::class, 'index'])->name('post.index');

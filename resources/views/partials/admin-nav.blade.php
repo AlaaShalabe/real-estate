@@ -53,12 +53,13 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-primary">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                        Log in
-                    </a>
+                    <div class="navbar-item">Hello {{ Auth::user()->name }}</div>
+                    <form action="{{ route('auth.logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="button is-light">
+                            Log Out
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
