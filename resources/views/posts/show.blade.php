@@ -13,31 +13,33 @@
                 <p> {{ $post->content }} </p>
             </div>
         </div>
+        @auth
 
-        <div class="field is-grouped">
-            <p class="control">
-                <a class=" button is-success is-outlined" href="{{ route('post.edit', $post) }}">
-                    <span class="icon-text">
-                        <span class="icon">
-                            <i class="fas fa-home"></i>
-                        </span>
-                        <span>Ediat post</span>
-                    </span>
-                </a>
-            </p>
-            <form action="{{ route('post.delete', $post) }}" method="POST">
-                @csrf
-                @method('delete')
+            <div class="field is-grouped">
                 <p class="control">
-                    <button class="button is-danger is-outlined" type="submit">
-                        <span class="icon is-small">
-                            <i class="fas fa-times"></i>
+                    <a class=" button is-success is-outlined" href="{{ route('post.edit', $post) }}">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-home"></i>
+                            </span>
+                            <span>Ediat post</span>
                         </span>
-                        <span>Delete post</span>
-                    </button>
-            </form>
-            </p>
-        </div>
+                    </a>
+                </p>
+                <form action="{{ route('post.delete', $post) }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <p class="control">
+                        <button class="button is-danger is-outlined" type="submit">
+                            <span class="icon is-small">
+                                <i class="fas fa-times"></i>
+                            </span>
+                            <span>Delete post</span>
+                        </button>
+                </form>
+                </p>
+            </div>
+        @endauth
     </div>
 
 @endsection

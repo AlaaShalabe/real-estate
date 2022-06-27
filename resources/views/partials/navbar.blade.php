@@ -16,9 +16,11 @@
             <a class="navbar-item">
                 Home
             </a>
-            <a class="navbar-item" href="{{ route('post.create') }}">
-                Admin panel
-            </a>
+            @auth
+                <a class="navbar-item" href="{{ route('post.create') }}">
+                    Admin panel
+                </a>
+            @endauth
 
             <a class="navbar-item">
                 About us
